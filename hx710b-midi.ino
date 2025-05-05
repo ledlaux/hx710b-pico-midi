@@ -5,7 +5,7 @@ const int DOUT_PIN = 12;
 const int SCK_PIN = 14;
 
 // MIDI Configuration
-const uint8_t MIDI_CC_NUM = 1;  // Mod Wheel
+const uint8_t MIDI_CC_NUM = 2;  // Breath Controller
 const uint8_t MIDI_CH = 1;       // Channel 1
 
 // Calibration
