@@ -13,12 +13,12 @@ Make sure to install the following libraries via the Arduino Library Manager or 
 
 ## Wiring
 
-| HX710B Pin | Connect To         |
-|-----------|--------------------|
-| VCC       | 3.3V (recomended) on Raspberry Pico   |
-| GND       | GND on Pico W      |
-| DT        | GPIO (e.g., GP12)   |
-| SCK       | GPIO (e.g., GP14)   |
+| HX710B Pin | Connect To (Raspberry Pi Pico) |
+|------------|-------------------------------|
+| VCC        | 3.3V *(recommended)*           |
+| GND        | GND                           |
+| DT         | GPIO12 (or any digital pin)    |
+| SCK        | GPIO14 (or any digital pin)    |
 
 ## Calibration
 
@@ -26,10 +26,12 @@ Adjust MIN_RAW, MAX_RAW
 
 ## Output
 
-1) After applied air pressure serial console prints:
-Raw: value | Midi: value (0-127)
+When pressure is applied:
 
-2) Sends MIDI CC messages to your DAW or synth. Default settings:
+1. The serial console prints:
+  Raw: value | Midi: value (0-127)
+
+2. Pico sends MIDI CC messages over usb. Default settings:
 
 - **CC Number**: 2 (Breath Control)
 - **MIDI Channel**: 1
