@@ -26,8 +26,15 @@ Adjust MIN_RAW, MAX_RAW
 
 ## Output
 
-After applied air pressure serial console prints
+1) After applied air pressure serial console prints:
 Raw: value | Midi: value (0-127)
+
+2) Sends MIDI CC messages to your DAW or synth. Default settings:
+
+- **CC Number**: 2 (Breath Control)
+- **MIDI Channel**: 1
+- **Update Rate**: ~10–50ms (adjustable)
+
 
 
 
