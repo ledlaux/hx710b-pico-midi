@@ -1,6 +1,6 @@
-# Pressure-to-MIDI Controller (HX710B + Raspberry Pi Pico W)
+# Pressure-to-MIDI Controller (HX710B + Raspberry Pi Pico)
 
-This project uses a **Raspberry Pi Pico W** running Arduino code to read pressure data from an MPS20N0040D sensor using **HX710B** 24-bit ADC and convert the data into **MIDI Control Change (CC)** messages over USB using **TinyUSB MIDI**.
+This project uses a **Raspberry Pi Pico** running Arduino code to read pressure data from an MPS20N0040D sensor using **HX710B** 24-bit ADC and convert the data into **MIDI Control Change (CC)** messages over USB using **TinyUSB MIDI**.
 
 Perfect for DIY musical interfaces such as breath controllers, pressure pads, or force-sensitive MIDI instruments.
 
