@@ -4,7 +4,6 @@ This project uses a **Raspberry Pi Pico W** running Arduino code to read pressur
 
 Perfect for DIY musical interfaces such as breath controllers, pressure pads, or force-sensitive MIDI instruments.
 
-
 ## Arduino Library Dependencies
 
 Make sure to install the following libraries via the Arduino Library Manager or manually:
@@ -20,5 +19,17 @@ Make sure to install the following libraries via the Arduino Library Manager or 
 | GND       | GND on Pico W      |
 | DT        | GPIO (e.g., GP12)   |
 | SCK       | GPIO (e.g., GP14)   |
+
+## Calibration
+
+Adjust MIN_RAW, MAX_RAW
+
+## Output
+
+After applied air pressure serial console prints
+Raw: value | Midi: value (0-127)
+
+
+
 
 
