@@ -28,8 +28,8 @@ Adjust MIN_RAW, MAX_RAW
 
 When pressure is applied:
 
-1. The serial console prints:
-  Raw: value | Midi: value (0-127)
+1. The serial console prints:   
+   Raw: value | Midi: value (0-127)
 
 2. Pico sends MIDI CC messages over usb. Default settings:
 
