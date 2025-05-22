@@ -17,7 +17,7 @@ Make sure to install the following libraries via the Arduino Library Manager or 
 |------------|-------------------------------|
 | VCC        | 3.3V *(recommended)*           |
 | GND        | GND                           |
-| DT         | GPIO12 (or any digital pin)    |
+| DT OUT     | GPIO12 (or any digital pin)    |
 | SCK        | GPIO14 (or any digital pin)    |
 
 ## Calibration
