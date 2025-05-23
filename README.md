@@ -1,13 +1,13 @@
 # Air Pressure-MIDI Controller (HX710b + Raspberry Pi Pico)
 
-This project uses a **Raspberry Pi Pico** running Arduino code to read air pressure data from an MPS20N0040D sensor using **HX710b** 24-bit ADC and convert the data into **MIDI Control Change (CC)** messages over USB using **TinyUSB MIDI**.
+This project uses a **Raspberry Pi Pico** running Arduino code to read air pressure data from an MPS20N0040D sensor using **HX710b** 24-bit ADC and convert the data into **MIDI Control Change (CC)** messages over USB using **TinyUSB stack**.
 
 Perfect for DIY musical interfaces such as breath controllers, pressure pads, or force-sensitive MIDI instruments.
 
 ## Arduino Library Dependencies
 
 Make sure to install the following libraries via the Arduino Library Manager or manually:
-- [`Adafruit TinyUSB Library`](https://github.com/adafruit/Adafruit_TinyUSB_Arduino)
+- [`Adafruit TinyUSB Library`](https://github.com/adafruit/Adafruit_TinyUSB_Arduino) 
 - `HX710B` or `HX711` compatible library (whichever you’re using or adapting)
 - `MIDI` library (optional if using USB directly via TinyUSB)
 
