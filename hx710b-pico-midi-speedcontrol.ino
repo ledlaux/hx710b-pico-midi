@@ -3,7 +3,7 @@
 
 const int DOUT_PIN = 12;
 const int SCK_PIN = 14;
-const int POT_PIN = 29;  // Potentiometer input
+const int POT_PIN = 29;  // Potentiometer input to control fall and midi send interval factor
 
 // MIDI Configuration
 const uint8_t MIDI_CC_NUM = 1;  // Breath Controller
