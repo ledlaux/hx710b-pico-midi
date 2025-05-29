@@ -8,7 +8,7 @@ const int SCK_PIN = 14;
 const int POT_PIN = 29;  // Potentiometer input
 
 // MIDI Configuration
-const uint8_t MIDI_CC_NUM = 7;  // Breath Controller
+const uint8_t MIDI_CC_NUM = 2;  // Breath Controller
 const uint8_t MIDI_CH = 1;      // Channel 1
 
 // Calibration
