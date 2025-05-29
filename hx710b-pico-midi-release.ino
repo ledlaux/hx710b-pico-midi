@@ -1,17 +1,18 @@
-#include <Adafruit_TinyUSB.h>  
+#include <Adafruit_TinyUSB.h>
 #include "HX710.h"
 
 const int DOUT_PIN = 12;
 const int SCK_PIN = 14;
-const int POT_PIN = 29;  // Potentiometer input to control fall and midi send interval factor
+const int POT_PIN = 29;  // Potentiometer input
 
 // MIDI Configuration
-const uint8_t MIDI_CC_NUM = 1;  // Breath Controller
+const uint8_t MIDI_CC_NUM = 7;  // Breath Controller
 const uint8_t MIDI_CH = 1;      // Channel 1
 
 // Calibration
-const long MIN_RAW = 600000;
-const long MAX_RAW = 2000000;
+const long MIN_RAW = 500000;
+const long MAX_RAW = 800000;
+const long MIN_THRESHOLD = MIN_RAW + 50000;  // Below this, force MIDI 0
 
 HX710 pressureSensor;
 Adafruit_USBD_MIDI usb_midi;
@@ -27,7 +28,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println("USB MIDI Ready");
 
-  pinMode(POT_PIN, INPUT);  // Potentiometer input
+  pinMode(POT_PIN, INPUT);
 }
 
 uint8_t pressure_to_midi(long raw) {
@@ -39,20 +40,20 @@ void loop() {
   if (pressureSensor.isReady()) {
     pressureSensor.readAndSelectNextData(HX710_DIFFERENTIAL_INPUT_40HZ);
     long raw = pressureSensor.getLastDifferentialInput();
-    uint8_t target_val = pressure_to_midi(raw);
+
+    uint8_t target_val = 0;
+    if (raw < MIN_THRESHOLD) {
+      target_val = 0;
+    } else {
+      target_val = pressure_to_midi(raw);
+    }
 
     static uint8_t last_val = 0;
     static uint32_t last_send = 0;
 
-    // Read potentiometer
     int pot_val = analogRead(POT_PIN);  // 0–1023
-
-    // Map to fall factor range: 0.90–0.99
     float fall_factor = map(pot_val, 0, 1023, 90, 99) / 100.0;
-
-    // Map to send interval: 10–50 ms
     uint32_t send_interval = map(pot_val, 0, 1023, 10, 50);
-
     const uint8_t rise_step = 2;
 
     if (millis() - last_send >= send_interval) {
@@ -61,6 +62,8 @@ void loop() {
       } else if (target_val < last_val) {
         last_val = max(target_val, uint8_t(last_val * fall_factor));
         if (last_val < target_val) last_val = target_val;
+      } else if (target_val == 0 && last_val != 0) {
+        last_val = 0;  // Force zero
       } else {
         return;
       }
