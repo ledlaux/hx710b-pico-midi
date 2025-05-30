@@ -1,4 +1,4 @@
-# This code adds potentiometer to control release time
+// This code adds potentiometer to control release time
 
 #include <Adafruit_TinyUSB.h>
 #include "HX710.h"
