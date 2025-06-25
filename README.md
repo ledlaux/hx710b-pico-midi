@@ -7,9 +7,9 @@ Perfect for DIY musical interfaces such as breath controllers, pressure pads, or
 ## Arduino Library Dependencies
 
 Make sure to install the following libraries via the Arduino Library Manager or manually:
-- [`Adafruit TinyUSB Library`](https://github.com/adafruit/Adafruit_TinyUSB_Arduino) 
+- Adafruit TinyUSB Library 
 - HX710 Arduino library
-- `MIDI` library 
+- MIDI library 
 
 ## Wiring
 
