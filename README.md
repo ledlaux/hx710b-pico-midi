@@ -22,8 +22,8 @@ Make sure to install the following libraries via the Arduino Library Manager or 
 
 ## Calibration
 
-Adjust MIN_RAW, MAX_RAW
-       FALL, (RELEASE) factor  
+Adjust MIN_RAW, MAX_RAW,
+       FALL (RELEASE) factor  
 
 ## Output
 
